@@ -341,9 +341,10 @@ This Docker setup is licensed under the MIT License. See [LICENSE](LICENSE) for 
 
 ## Links
 
+- **Website:** https://askedio.github.io/docker-whmcs (GitHub Pages)
 - **GitHub:** https://github.com/Askedio/docker-whmcs
 - **Docker Hub:** https://hub.docker.com/r/gcphost/whmcs
-- **WHMCS:** https://www.whmcs.com
+- **WHMCS:** https://www.whmcs.com/members/aff.php?aff=3256
 
 ---
 

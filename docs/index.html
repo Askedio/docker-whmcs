@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker WHMCS Development Environment</title>
+    <meta name="description" content="A complete Docker-based development environment for WHMCS with PHP 8.2, Apache, ionCube Loader, MariaDB, and MailHog.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .code-block { background: #1e1e1e; color: #d4d4d4; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Docker WHMCS</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">Complete development environment for WHMCS with PHP 8.2, Apache, ionCube Loader, MariaDB, and MailHog</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/Askedio/docker-whmcs" target="_blank" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                    <a href="https://hub.docker.com/r/gcphost/whmcs" target="_blank" class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition">
+                        <i class="fab fa-docker mr-2"></i>Docker Hub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">PHP 8.2 + Apache</h3>
+                    <p class="text-gray-600">All required extensions pre-installed and configured</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">ionCube Loader</h3>
+                    <p class="text-gray-600">Automatically installed for your PHP version</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MariaDB 10.6</h3>
+                    <p class="text-gray-600">Production-ready database included</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MailHog</h3>
+                    <p class="text-gray-600">Capture all emails without sending to real addresses</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Live Reload</h3>
+                    <p class="text-gray-600">Edit code locally, see changes instantly</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cross-Platform</h3>
+                    <p class="text-gray-600">Works on Mac, Linux, and Windows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Quick Start</h2>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <span class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
+                                Clone the repository
+                            </h3>
+                            <div class="code-block rounded-lg p-4 overflow-x-auto">
+                                <code class="text-sm">git clone https://github.com/Askedio/docker-whmcs.git<br>
+cd docker-whmcs</code>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <span class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
+                                Add your WHMCS files
+                            </h3>
+                            <div class="code-block rounded-lg p-4 overflow-x-auto">
+                                <code class="text-sm">mkdir -p whmcs<br>
+# Extract your WHMCS ZIP into ./whmcs</code>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <span class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
+                                Start the stack
+                            </h3>
+                            <div class="code-block rounded-lg p-4 overflow-x-auto">
+                                <code class="text-sm">docker compose up -d</code>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <span class="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center mr-3">4</span>
+                                Access WHMCS
+                            </h3>
+                            <p class="text-gray-600 mb-2">Open <a href="http://localhost:8080/install" target="_blank" class="text-purple-600 hover:underline">http://localhost:8080/install</a></p>
+                            <p class="text-sm text-gray-500">Database: Host <code class="bg-gray-100 px-2 py-1 rounded">db</code>, Name <code class="bg-gray-100 px-2 py-1 rounded">whmcs</code>, User <code class="bg-gray-100 px-2 py-1 rounded">whmcs</code>, Pass <code class="bg-gray-100 px-2 py-1 rounded">whmcs</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Support -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Platform Support</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
+                <div class="text-center p-6 bg-white rounded-xl shadow">
+                    <i class="fab fa-apple text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Apple Silicon</h3>
+                    <p class="text-sm text-gray-600">M1/M2/M3 Macs</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow">
+                    <i class="fas fa-laptop text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Intel Macs</h3>
+                    <p class="text-sm text-gray-600">Native support</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow">
+                    <i class="fab fa-linux text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Linux</h3>
+                    <p class="text-sm text-gray-600">x86_64/AMD64</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow">
+                    <i class="fab fa-windows text-4xl text-gray-700 mb-4"></i>
+                    <h3 class="font-semibold mb-2">Windows</h3>
+                    <p class="text-sm text-gray-600">WSL2 or Docker Desktop</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docker Hub Option -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6 text-gray-800">Pre-built Docker Image</h2>
+                <p class="text-xl text-gray-600 mb-8">Use the pre-built image from Docker Hub for faster setup</p>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="code-block rounded-lg p-4 overflow-x-auto text-left">
+                        <code class="text-sm">docker pull gcphost/whmcs:latest</code>
+                    </div>
+                    <p class="mt-4 text-gray-600">Or use it directly in docker-compose.yml</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-semibold mb-4">Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="https://github.com/Askedio/docker-whmcs" target="_blank" class="text-gray-400 hover:text-white transition">GitHub Repository</a></li>
+                            <li><a href="https://hub.docker.com/r/gcphost/whmcs" target="_blank" class="text-gray-400 hover:text-white transition">Docker Hub</a></li>
+                            <li><a href="https://www.whmcs.com/members/aff.php?aff=3256" target="_blank" class="text-gray-400 hover:text-white transition">WHMCS</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4">License</h3>
+                        <p class="text-gray-400">MIT License</p>
+                        <p class="text-sm text-gray-500 mt-2">WHMCS requires a valid license</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-4">Support</h3>
+                        <p class="text-gray-400">For issues with this Docker setup, please open an issue on GitHub.</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                    <p>&copy; 2024 Docker WHMCS. Open source project.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
