@@ -1,0 +1,44 @@
+services:
+  db:
+    platform: linux/amd64
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: whmcs
+      MYSQL_USER: whmcs
+      MYSQL_PASSWORD: whmcs
+    volumes:
+      - db_data:/var/lib/mysql
+
+  whmcs:
+    platform: linux/amd64
+    # Option 1: Build locally (default)
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    # Option 2: Use pre-built image from Docker Hub
+    # Uncomment the image line and comment out the build section above
+    # image: askedio/whmcs:latest
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      WHMCS_DB_HOST: db
+      WHMCS_DB_NAME: whmcs
+      WHMCS_DB_USER: whmcs
+      WHMCS_DB_PASS: whmcs
+    volumes:
+      - ./whmcs:/var/www/html
+
+  mailhog:
+    platform: linux/amd64
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "8025:8025"
+
+volumes:
+  db_data:
