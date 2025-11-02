@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     # Option 2: Use pre-built image from Docker Hub
     # Uncomment the image line and comment out the build section above
-    # image: askedio/whmcs:latest
+    # image: gcphost/whmcs:latest
     restart: always
     depends_on:
       - db

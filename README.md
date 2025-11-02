@@ -2,7 +2,7 @@
 
 A complete Docker-based development environment for WHMCS with PHP 8.2, Apache, ionCube Loader, MariaDB, and MailHog. Perfect for developing addons, gateways, server modules, hooks, and templates.
 
-[![Docker Hub](https://img.shields.io/badge/docker%20hub-askedio%2Fwhmcs-blue)](https://hub.docker.com/r/askedio/whmcs)
+[![Docker Hub](https://img.shields.io/badge/docker%20hub-gcphost%2Fwhmcs-blue)](https://hub.docker.com/r/gcphost/whmcs)
 
 ## Features
 
@@ -33,7 +33,7 @@ A complete Docker-based development environment for WHMCS with PHP 8.2, Apache, 
    whmcs:
      platform: linux/amd64
      # Use pre-built image from Docker Hub
-     image: askedio/whmcs:latest
+     image: gcphost/whmcs:latest
      # Comment out the build section
      # build:
      #   context: ./web
@@ -246,7 +246,7 @@ All changes are live - refresh your browser to see updates.
 The pre-built image is available on Docker Hub:
 
 ```bash
-docker pull askedio/whmcs:latest
+docker pull gcphost/whmcs:latest
 ```
 
 ### Publishing Updates to Docker Hub
@@ -257,16 +257,16 @@ If you're the maintainer and want to publish updates:
    ```bash
    docker buildx create --use --name multiarch
    docker buildx build --platform linux/amd64,linux/arm64 \
-     -t askedio/whmcs:latest \
-     -t askedio/whmcs:8.2 \
+     -t gcphost/whmcs:latest \
+     -t gcphost/whmcs:8.2 \
      ./web \
      --push
    ```
 
 2. **Or build and push manually:**
    ```bash
-   docker build -t askedio/whmcs:latest ./web
-   docker push askedio/whmcs:latest
+   docker build -t gcphost/whmcs:latest ./web
+   docker push gcphost/whmcs:latest
    ```
 
 ---
@@ -342,7 +342,7 @@ This Docker setup is licensed under the MIT License. See [LICENSE](LICENSE) for 
 ## Links
 
 - **GitHub:** https://github.com/Askedio/docker-whmcs
-- **Docker Hub:** https://hub.docker.com/r/askedio/whmcs
+- **Docker Hub:** https://hub.docker.com/r/gcphost/whmcs
 - **WHMCS:** https://www.whmcs.com
 
 ---
